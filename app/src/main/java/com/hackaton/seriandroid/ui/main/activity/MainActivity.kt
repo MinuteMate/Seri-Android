@@ -4,9 +4,7 @@ import android.os.Bundle
 import com.hackaton.seriandroid.R
 import com.hackaton.seriandroid.databinding.ActivityMainBinding
 import com.hackaton.seriandroid.ui.base.BaseActivity
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {

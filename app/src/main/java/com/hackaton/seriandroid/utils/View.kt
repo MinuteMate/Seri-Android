@@ -1,4 +1,4 @@
-package com.semicolon.walkhub.util
+package com.hackaton.seriandroid.utils
 
 import android.text.Editable
 import android.text.TextWatcher

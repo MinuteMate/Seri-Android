@@ -1,7 +1,7 @@
 package com.hackaton.seriandroid.di.module
 
 import android.util.Log
-import com.hackaton.seriandroid.data.repository.auth.AuthApi
+import com.hackaton.seriandroid.data.remote.api.AuthApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

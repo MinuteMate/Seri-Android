@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="73dp"
+            android:text="회원가입"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="21dp"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:layout_marginTop="72dp"
+            android:text="jangseokeyeon1110@gmail.com으로 6자리 코드를 전송했습니다."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="41dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+            <EditText
+                android:id="@+id/email_code_one_text"
+                android:layout_width="30dp"
+                android:layout_height="45dp"
+                android:background="@drawable/auth_email_otp_background"
+                android:cursorVisible="false"
+                android:enabled="false"
+                android:imeOptions="actionDone"
+                android:maxLength="1"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/email_code_two_text"
+
+                android:layout_width="30dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/auth_email_otp_background"
+                android:cursorVisible="false"
+                android:enabled="false"
+                android:imeOptions="actionDone"
+                android:maxLength="1"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/email_code_three_text"
+
+                android:layout_width="30dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/auth_email_otp_background"
+                android:cursorVisible="false"
+                android:enabled="false"
+                android:imeOptions="actionDone"
+                android:maxLength="1"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/email_code_four_text"
+
+                android:layout_width="30dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/auth_email_otp_background"
+                android:cursorVisible="false"
+                android:enabled="false"
+                android:imeOptions="actionDone"
+                android:maxLength="1"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/email_code_five_text"
+
+                android:layout_width="30dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/auth_email_otp_background"
+                android:cursorVisible="false"
+                android:enabled="false"
+                android:imeOptions="actionDone"
+                android:maxLength="1"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/email_code_six_text"
+
+                android:layout_width="30dp"
+                android:layout_height="45dp"
+                android:layout_margin="24dp"
+                android:background="@drawable/auth_email_otp_background"
+                android:cursorVisible="false"
+                android:enabled="false"
+                android:imeOptions="actionDone"
+                android:maxLength="@integer/material_motion_duration_long_1"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:text="남은 시간 5:00"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

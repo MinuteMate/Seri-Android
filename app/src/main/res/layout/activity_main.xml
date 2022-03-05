@@ -17,7 +17,7 @@
         tools:context=".ui.main.MainActivity">
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/tvPlayGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="100dp"
@@ -30,6 +30,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:id="@+id/tvCreateGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -40,10 +41,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+            app:layout_constraintTop_toBottomOf="@+id/tvPlayGame" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/ivUserSet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -53,13 +54,13 @@
             app:srcCompat="@drawable/ic_setting" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/ivHelp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            app:layout_constraintEnd_toEndOf="@+id/ivUserSet"
+            app:layout_constraintStart_toStartOf="@+id/ivUserSet"
+            app:layout_constraintTop_toBottomOf="@+id/ivUserSet"
             app:srcCompat="@drawable/ic_help" />
 
 

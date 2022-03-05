@@ -1,6 +1,8 @@
 package com.hackaton.seriandroid.data.remote.network
 
+import com.google.gson.annotations.SerializedName
+
 
 data class ErrorResponse(
-    val errorMessage: String
+    @SerializedName("message") val message: String
 )

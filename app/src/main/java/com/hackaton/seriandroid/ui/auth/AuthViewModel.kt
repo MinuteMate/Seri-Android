@@ -73,7 +73,7 @@ class AuthViewModel @Inject constructor(
                 _optSuccess.value = response.value != null
             }
             is ResultWrapper.Failed -> {
-                _optFail.value = response.error?.errorMessage
+                _optFail.value = response.error?.message
             }
         }
 
@@ -95,7 +95,7 @@ class AuthViewModel @Inject constructor(
                 _success.value = response.value != null
             }
             is ResultWrapper.Failed -> {
-                _fail.value = response.error?.errorMessage
+                _fail.value = response.error?.message
             }
             is ResultWrapper.NetworkError -> {
                 _fail.value = "네트워크 에러"
@@ -115,7 +115,7 @@ class AuthViewModel @Inject constructor(
                 _success.value = true
             }
             is ResultWrapper.Failed -> {
-                _fail.value = response.error?.errorMessage
+                _fail.value = response.error?.message
             }
         }
 

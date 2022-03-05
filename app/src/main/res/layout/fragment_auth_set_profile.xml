@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
-        android:src="@drawable/auith_profile_plus_img"
+        android:src="@drawable/auth_profile_plus_img"
         android:background="@drawable/auth_profile_circle"
         app:layout_constraintEnd_toEndOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="@+id/textView6"

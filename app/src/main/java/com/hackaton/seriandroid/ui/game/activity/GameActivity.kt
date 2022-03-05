@@ -16,6 +16,5 @@ class GameActivity : BaseActivity<ActivityGameBinding>(
     }
 
     private fun setRecyclerview() {
-        binding.
     }
 }

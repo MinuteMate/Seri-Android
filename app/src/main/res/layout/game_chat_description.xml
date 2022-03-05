@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.hackaton.seriandroid.ui.game.model.Message" />
+            type="com.hackaton.seriandroid.ui.game.model.GameMessage" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

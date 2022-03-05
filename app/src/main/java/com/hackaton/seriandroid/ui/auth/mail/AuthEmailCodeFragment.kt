@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.FrameLayout
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.hackaton.seriandroid.R
@@ -16,13 +17,13 @@ import com.hackaton.seriandroid.ui.auth.AuthMainActivity
 import com.hackaton.seriandroid.ui.auth.AuthViewModel
 import com.hackaton.seriandroid.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
 
 class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
     (R.layout.fragment_auth_email_code) {
-
 
 
     private val viewModel: AuthViewModel by activityViewModels()
@@ -84,7 +85,7 @@ class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
 
     override fun initView() {
         postEmailCode()
-        binding.authEmailCodeContent.text = "${args.email}으로 6자리 코드르를 전송했습니다."
+        binding.authEmailCodeContent.text = "${args.email}으로 6자리 코드를를 전송했습니다."
         setListener()
         initFocus()
         mCountDown.start()
@@ -171,25 +172,35 @@ class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
                 otpTextFive.text.toString().trim() +
                 otpTextSix.text.toString().trim()
 
+
+
         if (otpCode.length != 6)
             return
 
-        if (otpCode == otpCode) {
+        lifecycleScope.launch {
+            viewModel.fetchVerifyCode(otpCode)
 
-            findNavController().navigate(R.id.action_authEmailCodeFragment_to_authPasswordFragment)
+            viewModel.optSuccess.observe(viewLifecycleOwner){
+                findNavController().navigate(R.id.action_authEmailCodeFragment_to_authPasswordFragment)
+
+            }
+            viewModel.optFail.observe(viewLifecycleOwner){
+             showShortToast(it)
+
+            }
+
             val inputManager =
                 (activity as AuthMainActivity).getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputManager.hideSoftInputFromWindow(frameLayout.windowToken, 0)
-            return
-        } else {
-            showShortToast("인증번호가 맞지 않습니다.")
         }
 
     }
 
     private fun postEmailCode() {
         if (args.email.isNotEmpty()) {
-            // 코드 전송 코드
+            lifecycleScope.launch {
+                viewModel.postAuthorizeEmail(email = args.email)
+            }
         } else {
             showShortToast("코드 전송이 실패했습니다.")
             reset()

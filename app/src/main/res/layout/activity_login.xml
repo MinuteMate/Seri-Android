@@ -5,65 +5,49 @@
     <data>
 
         <variable
-            name="fragment"
-            type="com.hackaton.seriandroid.ui.auth.login.AuthLoginFragment" />
+            name="activity"
+            type="com.hackaton.seriandroid.ui.auth.login.LoginActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="로그인"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="107dp"
+            android:text="세대갈등\n라이어게임."
             android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="66dp"
-            android:layout_marginEnd="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="259dp"
+            android:layout_marginEnd="40dp"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:id="@+id/auth_login_id_text"
-                android:layout_height="wrap_content"
-                android:hint="아이디를 입력하세요" />
-
-            <EditText
-                android:id="@+id/auth_login_pwd_text"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="29dp"
-               android:hint="비밀번호를 입력해주세요." />
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/auth_login_btn"
+                android:backgroundTint="@color/white"
+                android:text="로그인 하기"
+                android:onClick="@{()->activity.loginButtonClickEvent()}"
                 android:background="@drawable/auth_login_btn_radius"
-                android:layout_marginTop="32dp"
-                android:textColor="@color/white"
-                android:onClick="@{()->fragment.loginButtonClickEvent()}"
-                android:backgroundTint="@color/black"
-                android:text="로그인" />
+                android:textColor="@color/black" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="72dp"
                 android:orientation="horizontal">
 
 
@@ -76,36 +60,38 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:layout_marginStart="7dp"
                     android:layout_marginEnd="7dp"
                     android:text="OR" />
 
                 <View
                     android:layout_width="150dp"
-                    android:layout_height="1dp"
-
+                    android:layout_height="2dp"
                     android:layout_gravity="center"
                     android:background="@drawable/auth_login_line" />
-
-
             </LinearLayout>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
                 android:text="계정이 없으신가요?" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:onClick="@{()->fragment.signUpButtonClickEvent()}"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="88dp"
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="회원가입 하기" />
+                android:onClick="@{()->activity.signUpButtonClickEvent()}"
+
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/black"
+                android:id="@+id/auth_signUp_btn"
+                android:text="회원가입 하기"
+                android:background="@drawable/auth_login_btn_radius"
+                android:textColor="@color/white" />
+
+
         </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

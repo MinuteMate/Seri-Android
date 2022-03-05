@@ -1,7 +1,7 @@
 package com.hackaton.seriandroid.data.local.storage
 
 import android.content.Context
-import androidx.preference.PreferenceManager
+import android.preference.PreferenceManager
 import com.hackaton.seriandroid.data.local.storage.AuthDataStorageImpl.Key.ACCESS_TOKEN
 import com.hackaton.seriandroid.data.local.storage.AuthDataStorageImpl.Key.ACCOUNT_ID
 import com.hackaton.seriandroid.data.local.storage.AuthDataStorageImpl.Key.ACCOUNT_PASSWORD

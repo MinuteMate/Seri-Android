@@ -1,6 +1,7 @@
 package com.hackaton.seriandroid.data.remote.datasource
 
 import com.hackaton.seriandroid.data.remote.api.AuthApi
+import com.hackaton.seriandroid.data.remote.dto.request.EmailRequest
 import com.hackaton.seriandroid.data.remote.dto.request.SignInRequest
 import com.hackaton.seriandroid.data.remote.dto.request.SignUpRequest
 import com.hackaton.seriandroid.data.remote.dto.response.FetchVerifyCodeResponse
@@ -32,7 +33,7 @@ class RemoteAuthDataSourceImpl @Inject constructor(
 
     override suspend fun sendEmail(email: String): ResultWrapper<Unit?> =
         safeApiCall {
-            authApi.postAuthorizeEmail(email)
+            authApi.postAuthorizeEmail(EmailRequest(email))
         }
 
     override suspend fun verifyEmail(number: String): ResultWrapper<FetchVerifyCodeResponse?> =

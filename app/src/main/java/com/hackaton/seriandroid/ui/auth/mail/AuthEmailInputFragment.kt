@@ -18,14 +18,9 @@ class AuthEmailInputFragment : BaseFragment<FragmentAuthEmailInputBinding>
     override fun initView() {
         binding.fragment = this@AuthEmailInputFragment
 
-        viewModel.success.observe(viewLifecycleOwner) {
-            val action =
-                AuthEmailInputFragmentDirections.actionAuthEmailInputFragmentToAuthEmailCodeFragment(
-                    binding.authInputEmailText.text.toString().trim()
-                )
-            findNavController().navigate(action)
+
         }
-    }
+
 
 
     fun nextButtonClickEvent() {
@@ -35,6 +30,11 @@ class AuthEmailInputFragment : BaseFragment<FragmentAuthEmailInputBinding>
         } else {
             Log.d("TAG", "nextButtonClickEvent: ${binding.authInputEmailText.text.toString()}")
             viewModel.getEmail(binding.authInputEmailText.text.toString())
+            val action =
+                AuthEmailInputFragmentDirections.actionAuthEmailInputFragmentToAuthEmailCodeFragment(
+                    binding.authInputEmailText.text.toString().trim()
+                )
+            findNavController().navigate(action)
         }
     }
 

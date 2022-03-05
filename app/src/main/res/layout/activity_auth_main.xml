@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="activity"
+            type="com.hackaton.seriandroid.ui.auth.AuthMainActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +25,6 @@
             app:layout_constraintVertical_weight="1"
             app:navGraph="@navigation/auth_navi" />
 
-
         <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
             android:id="@+id/dots_indicator"
             android:layout_width="wrap_content"
@@ -40,7 +42,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:progressMode="false"
             app:selectedDotColor="@android:color/black" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

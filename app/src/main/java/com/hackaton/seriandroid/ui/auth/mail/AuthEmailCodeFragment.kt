@@ -94,9 +94,10 @@ class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
         setListener()
         initFocus()
         mCountDown.start()
-        binding.fragment=this@AuthEmailCodeFragment
+        binding.fragment = this@AuthEmailCodeFragment
 
     }
+
     fun timeReSendOnClickEvent() {
         binding.authEmailCodeReSend.setOnClickListener {
             mCountDown.start()
@@ -194,11 +195,13 @@ class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
             viewModel.fetchVerifyCode(otpCode)
 
             viewModel.optSuccess.observe(viewLifecycleOwner) {
-                if (it){
-                findNavController().navigate(R.id.action_authEmailCodeFragment_to_authPasswordFragment)
+                if (it) {
+                    findNavController().navigate(R.id.action_authEmailCodeFragment_to_authPasswordFragment)
 
-                }else{
+                } else {
                     showShortToast("데이터가 없습니다.")
+                    reset()
+
                 }
             }
             viewModel.optFail.observe(viewLifecycleOwner) {
@@ -220,7 +223,6 @@ class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
             }
         } else {
             showShortToast("코드 전송이 실패했습니다.")
-            reset()
         }
     }
 }

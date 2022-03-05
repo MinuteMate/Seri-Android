@@ -6,7 +6,7 @@ import androidx.lifecycle.lifecycleScope
 import com.hackaton.seriandroid.R
 import com.hackaton.seriandroid.databinding.FragmentAuthFinishBinding
 import com.hackaton.seriandroid.ui.auth.AuthViewModel
-import com.hackaton.seriandroid.ui.auth.login.LoginActivity
+import com.hackaton.seriandroid.ui.signin.activity.SignInActivity
 import com.hackaton.seriandroid.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -23,7 +23,7 @@ class AuthFinishFragment : BaseFragment<FragmentAuthFinishBinding>(R.layout.frag
             }
             success.observe(viewLifecycleOwner) {
                 if (it)
-                    startActivity(Intent(requireContext(), LoginActivity::class.java))
+                    startActivity(Intent(requireContext(), SignInActivity::class.java))
                 else{
                     showShortToast("회원가입 할 수 없는 계정입니다.")
                 }

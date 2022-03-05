@@ -2,6 +2,8 @@ package com.hackaton.seriandroid.ui.game.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.view.View
 import com.hackaton.seriandroid.R
 import com.hackaton.seriandroid.databinding.ActivityVoteBinding
 import com.hackaton.seriandroid.ui.base.BaseActivity
@@ -20,6 +22,20 @@ class VoteActivity : BaseActivity<ActivityVoteBinding> (
 
         binding.ivSend.setOnClickListener {
             movePage(page++)
+        }
+        mCountDown.start()
+    }
+
+    private val mCountDown: CountDownTimer = object : CountDownTimer(60000, 1000) {
+        override fun onTick(millisUntilFinished: Long) {
+
+            binding.textView8.text =
+                ("남은시간 ${millisUntilFinished % 600000 % 60000 / 1000}")
+
+            binding.progressBar.progress = (millisUntilFinished % 600000 % 60000 / 1000).toInt()
+        }
+
+        override fun onFinish() {
         }
     }
 

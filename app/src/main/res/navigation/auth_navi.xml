@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navi"
+    app:startDestination="@id/authEmailInputFragment">
+
+
+    <fragment
+        android:id="@+id/authEmailCodeFragment"
+        android:name="com.hackaton.seriandroid.ui.auth.mail.AuthEmailCodeFragment"
+        android:label="AuthEmailCodeFragment" >
+        <action
+            android:id="@+id/action_authEmailCodeFragment_to_authPasswordFragment"
+            app:destination="@id/authPasswordFragment" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_authEmailCodeFragment_to_authEmailInputFragment"
+            app:destination="@id/authEmailInputFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authEmailInputFragment"
+        android:name="com.hackaton.seriandroid.ui.auth.mail.AuthEmailInputFragment"
+        android:label="AuthEmailInputFragment" >
+        <action
+            android:id="@+id/action_authEmailInputFragment_to_authEmailCodeFragment"
+            app:destination="@id/authEmailCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authFinishFragment"
+        android:name="com.hackaton.seriandroid.ui.auth.finish.AuthFinishFragment"
+        android:label="AuthFinishFragment" />
+    <fragment
+        android:id="@+id/authPasswordReFragment"
+        android:name="com.hackaton.seriandroid.ui.auth.password.AuthPasswordReFragment"
+        android:label="AuthPasswordReFragment" >
+        <action
+            android:id="@+id/action_authPasswordReFragment_to_authNameInputFragment"
+            app:destination="@id/authNameInputFragment" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/authNameInputFragment"
+        android:name="com.hackaton.seriandroid.ui.auth.name.AuthNameInputFragment"
+        android:label="AuthNameInputFragment" >
+        <action
+            android:id="@+id/action_authNameInputFragment_to_authFinishFragment"
+            app:destination="@id/authFinishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authPasswordFragment"
+        android:name="com.hackaton.seriandroid.ui.auth.password.AuthPasswordFragment"
+        android:label="AuthPasswordFragment" >
+        <action
+            android:id="@+id/action_authPasswordFragment_to_authPasswordReFragment"
+            app:destination="@id/authPasswordReFragment" />
+    </fragment>
+</navigation>

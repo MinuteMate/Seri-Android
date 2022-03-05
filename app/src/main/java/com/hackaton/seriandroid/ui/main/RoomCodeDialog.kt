@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.Window
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.hackaton.seriandroid.R
@@ -14,6 +15,7 @@ class RoomCodeDialog(context: Context) {
 
     private lateinit var etClassCode: EditText
     private lateinit var ivNext: ImageView
+    private lateinit var tvCancel: TextView
 
     val _classCode: MutableLiveData<String> = MutableLiveData()
     val classCode: LiveData<String> get() = _classCode
@@ -25,11 +27,16 @@ class RoomCodeDialog(context: Context) {
 
         etClassCode = dlg.findViewById(R.id.etClassCode)
         ivNext = dlg.findViewById(R.id.ivNext)
+        tvCancel = dlg.findViewById(R.id.tvCancel)
 
         ivNext.setOnClickListener {
-            dlg.dismiss()
-
             _classCode.value = etClassCode.text.toString()
+
+            dlg.dismiss()
+        }
+
+        tvCancel.setOnClickListener {
+            dlg.dismiss()
         }
 
         dlg.show()

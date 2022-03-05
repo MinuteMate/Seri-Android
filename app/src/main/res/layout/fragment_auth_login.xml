@@ -36,29 +36,34 @@
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-            <EditText
-                android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/auth_login_id_text"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="아이디를 입력하세요" />
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:hint="아이디를 입력하세요"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/auth_login_pwd_text"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="29dp"
-               android:hint="비밀번호를 입력해주세요." />
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:hint="비밀번호를 입력해주세요."
+                android:textColor="@color/black"
+                android:textSize="13sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/auth_login_btn_radius"
+                android:layout_height="30dp"
                 android:layout_marginTop="32dp"
-                android:textColor="@color/white"
-                android:onClick="@{()->fragment.loginButtonClickEvent()}"
+                android:background="@drawable/auth_login_btn_radius"
                 android:backgroundTint="@color/black"
-                android:text="로그인" />
+                android:onClick="@{()->fragment.loginButtonClickEvent()}"
+                android:text="로그인"
+                android:textColor="@color/white" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -68,8 +73,8 @@
 
 
                 <View
-                    android:layout_width="150dp"
-                    android:layout_height="2dp"
+                    android:layout_width="110dp"
+                    android:layout_height="1dp"
                     android:layout_gravity="center"
                     android:background="@drawable/auth_login_line" />
 
@@ -82,7 +87,7 @@
                     android:text="OR" />
 
                 <View
-                    android:layout_width="150dp"
+                    android:layout_width="110dp"
                     android:layout_height="1dp"
 
                     android:layout_gravity="center"
@@ -96,16 +101,23 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="계정이 없으신가요?" />
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:text="계정이 없으신가요?"
+                android:textColor="@color/black"
+                android:textSize="8sp" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:onClick="@{()->fragment.signUpButtonClickEvent()}"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="88dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="회원가입 하기" />
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="88dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:includeFontPadding="false"
+                android:onClick="@{()->fragment.signUpButtonClickEvent()}"
+                android:text="회원가입 하기"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -19,14 +19,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="73dp"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:includeFontPadding="false"
             android:text="회원가입"
             android:textColor="@color/black"
             android:textSize="18sp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
 
             android:id="@+id/auth_input_name_text"
             android:layout_width="match_parent"
@@ -34,8 +37,11 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="151dp"
             android:layout_marginEnd="50dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
             android:hint="닉네임을 입력해주세요."
+            android:includeFontPadding="false"
             android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

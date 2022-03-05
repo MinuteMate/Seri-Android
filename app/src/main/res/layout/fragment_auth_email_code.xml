@@ -21,11 +21,11 @@
             android:layout_height="match_parent">
 
             <TextView
-
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="73dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
                 android:text="회원가입"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -41,6 +41,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="72dp"
                 android:layout_marginEnd="21dp"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:includeFontPadding="false"
                 android:textColor="@color/black"
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +54,9 @@
                 android:id="@+id/linearLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="52dp"
                 android:layout_marginTop="41dp"
+                android:layout_marginEnd="52dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -63,11 +67,12 @@
                     android:id="@+id/email_code_one_text"
                     android:layout_width="30dp"
                     android:layout_height="45dp"
+                    android:layout_marginStart="20dp"
                     android:background="@drawable/auth_email_otp_background"
                     android:cursorVisible="false"
                     android:enabled="false"
-                    android:imeOptions="actionNone"
                     android:gravity="center"
+                    android:imeOptions="actionNone"
                     android:inputType="numberDecimal"
                     android:maxLength="1"
                     android:maxLines="1"
@@ -78,16 +83,15 @@
                 <EditText
                     android:id="@+id/email_code_two_text"
                     android:layout_width="30dp"
-
                     android:layout_height="45dp"
                     android:layout_marginStart="24dp"
                     android:background="@drawable/auth_email_otp_background"
                     android:cursorVisible="false"
                     android:enabled="false"
+                    android:gravity="center"
                     android:imeOptions="actionNone"
                     android:inputType="numberDecimal"
                     android:maxLength="1"
-                    android:gravity="center"
 
                     android:maxLines="1"
                     android:textColor="@color/black"
@@ -103,10 +107,10 @@
                     android:background="@drawable/auth_email_otp_background"
                     android:cursorVisible="false"
                     android:enabled="false"
+                    android:gravity="center"
                     android:imeOptions="actionNone"
                     android:inputType="numberDecimal"
                     android:maxLength="1"
-                    android:gravity="center"
 
                     android:maxLines="1"
                     android:textColor="@color/black"
@@ -122,8 +126,8 @@
                     android:background="@drawable/auth_email_otp_background"
                     android:cursorVisible="false"
                     android:enabled="false"
-                    android:imeOptions="actionNone"
                     android:gravity="center"
+                    android:imeOptions="actionNone"
 
                     android:inputType="numberDecimal"
                     android:maxLength="1"
@@ -141,9 +145,9 @@
                     android:background="@drawable/auth_email_otp_background"
                     android:cursorVisible="false"
                     android:enabled="false"
+                    android:gravity="center"
                     android:imeOptions="actionNone"
                     android:inputType="numberDecimal"
-                    android:gravity="center"
 
                     android:maxLength="1"
                     android:maxLines="1"
@@ -160,9 +164,9 @@
                     android:layout_margin="24dp"
                     android:background="@drawable/auth_email_otp_background"
                     android:cursorVisible="false"
-                    android:gravity="center"
-
                     android:enabled="false"
+
+                    android:gravity="center"
                     android:imeOptions="actionNone"
                     android:inputType="numberDecimal"
                     android:maxLength="@integer/material_motion_duration_long_1"
@@ -177,10 +181,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="23dp"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="@+id/linearLayout"
                 app:layout_constraintStart_toStartOf="@+id/linearLayout"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout"
                 tools:text="남은 시간 5:00" />
+
+            <TextView
+                android:id="@+id/auth_email_code_re_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:includeFontPadding="false"
+                android:onClick="@{()->fragment.timeReSendOnClickEvent()}"
+                android:textColor="#FF5F5F"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:text="코드 재전송하기" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </layout>

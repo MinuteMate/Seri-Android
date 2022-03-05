@@ -17,18 +17,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="221dp"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:includeFontPadding="false"
             android:text="이제 세대갈등, 라이어게임을\n 플레이 하실 준비가 완료되었습니다.\n 즐겁게 플레이 해주세요 !"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="29dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
             android:text="완료 "
             android:textColor="@color/black"
             android:textSize="13sp"

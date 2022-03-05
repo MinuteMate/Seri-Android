@@ -29,7 +29,7 @@ class SignInViewModel @Inject constructor(
                     event(Event.ErrorMessage("네트워크가 불안정합니다."))
                 }
                 is ResultWrapper.Failed -> {
-                    event(Event.ErrorMessage(signIn.error?.errorMessage!!))
+                    event(Event.ErrorMessage(signIn.error?.message!!))
                 }
                 is ResultWrapper.Success -> {
                     Log.d(TAG, "signIn: success")

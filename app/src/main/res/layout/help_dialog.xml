@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <View
-        android:id="@+id/view3"
+        android:id="@+id/v51"
         android:layout_width="300dp"
         android:layout_height="270dp"
         android:background="@drawable/bg_dialog_help_out"
@@ -15,14 +15,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/view5"
+        android:id="@+id/v81"
         android:layout_width="280dp"
         android:layout_height="250dp"
         android:background="@drawable/bg_help_dialog_outline"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toTopOf="@+id/view3" />
+        app:layout_constraintBottom_toBottomOf="@+id/v51"
+        app:layout_constraintEnd_toEndOf="@+id/v51"
+        app:layout_constraintStart_toStartOf="@+id/v51"
+        app:layout_constraintTop_toTopOf="@+id/v51" />
 
     <TextView
         android:id="@+id/tvPageCount"
@@ -34,8 +34,8 @@
         android:text="게임 방법 [1/6]"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/view5"
-        app:layout_constraintTop_toTopOf="@+id/view5" />
+        app:layout_constraintEnd_toEndOf="@+id/v81"
+        app:layout_constraintTop_toTopOf="@+id/v81" />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -46,9 +46,9 @@
         android:text="등록 단계"
         android:textColor="@color/white"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/view5"
-        app:layout_constraintStart_toStartOf="@+id/view5"
-        app:layout_constraintTop_toTopOf="@+id/view5" />
+        app:layout_constraintEnd_toEndOf="@+id/v81"
+        app:layout_constraintStart_toStartOf="@+id/v81"
+        app:layout_constraintTop_toTopOf="@+id/v81" />
 
     <TextView
         android:id="@+id/tvDescription"
@@ -61,8 +61,8 @@
         android:text="설명설명설명"
         android:textColor="#DDDDDD"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/view5"
-        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintEnd_toEndOf="@+id/v81"
+        app:layout_constraintStart_toStartOf="@+id/v81"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
     <LinearLayout
@@ -73,8 +73,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="15dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/view5"
-        app:layout_constraintEnd_toEndOf="@+id/view5">
+        app:layout_constraintBottom_toBottomOf="@+id/v81"
+        app:layout_constraintEnd_toEndOf="@+id/v81">
 
         <TextView
             android:id="@+id/tvNextText"

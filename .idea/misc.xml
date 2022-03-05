@@ -18,13 +18,15 @@
         <entry key="app/src/main/res/drawable/bg_help_dialog_outline.xml" value="0.33055555555555555" />
         <entry key="app/src/main/res/drawable/bg_splash_login.xml" value="0.23645833333333333" />
         <entry key="app/src/main/res/drawable/bg_splash_register.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/drawable/bg_vote_player.xml" value="0.3148148148148148" />
         <entry key="app/src/main/res/drawable/chat_mine_view.xml" value="0.33611111111111114" />
         <entry key="app/src/main/res/drawable/chat_partner_view.xml" value="0.33611111111111114" />
         <entry key="app/src/main/res/drawable/fix_user_profile_dialog_outline.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/drawable/join_game_dialog.xml" value="0.23645833333333333" />
         <entry key="app/src/main/res/drawable/progressbar_horizontal.xml" value="0.33055555555555555" />
         <entry key="app/src/main/res/layout/activity_auth_main.xml" value="0.19157608695652173" />
-        <entry key="app/src/main/res/layout/activity_game.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_before.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_game.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2839200865996566" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20106563491999352" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.39370559554445245" />
@@ -45,6 +47,9 @@
         <entry key="app/src/main/res/layout/game_chat_description.xml" value="0.375" />
         <entry key="app/src/main/res/layout/game_chat_mine.xml" value="0.182370820668693" />
         <entry key="app/src/main/res/layout/game_chat_parter.xml" value="0.40988372093023256" />
+        <entry key="app/src/main/res/layout/game_enter_list.xml" value="0.19630192502532928" />
+        <entry key="app/src/main/res/layout/game_other_list.xml" value="0.19630192502532928" />
+        <entry key="app/src/main/res/layout/gmae_me_list.xml" value="0.19630192502532928" />
         <entry key="app/src/main/res/layout/help_dialog.xml" value="0.45" />
       </map>
     </option>

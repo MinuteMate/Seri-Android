@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.hackaton.seriandroid.ui.game.activity.BeforeActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/game_before"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_chat_page"
+        tools:context=".ui.game.activity.GameActivity"
+        android:visibility="visible">
+
+
+        <ImageView
+            android:id="@+id/ivbSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_send"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/etChat"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/bg_et_chat"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:hint="채팅 보내기..."
+            android:paddingLeft="16dp"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivbSend"
+            app:layout_constraintEnd_toStartOf="@+id/ivbSend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivbSend" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:text="40초"
+            android:textColor="@color/white"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toTopOf="@+id/etChat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="7dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="12dp"
+            android:max="100"
+            android:progress="50"
+            android:progressDrawable="@drawable/progressbar_horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/etChat"
+            app:layout_constraintEnd_toStartOf="@+id/textView8"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/neodgm_pro"
+            android:gravity="center"
+            android:text="이건 설명입니다 이건 설명입니다"
+            android:textColor="@color/half_white"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v13"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="4dp"
+            android:background="@color/half_white"
+            app:layout_constraintBottom_toBottomOf="@+id/v12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/v12"
+            app:layout_constraintTop_toTopOf="@+id/v12" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v11"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/half_white"
+            app:layout_constraintBottom_toBottomOf="@+id/v12"
+            app:layout_constraintEnd_toStartOf="@+id/v12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v12" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/neodgm_pro"
+            android:gravity="center"
+            android:text="안드 싫어 세현님이 입장하셨습니다."
+            android:textColor="@color/half_white"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v12" />
+
+        <View
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="4dp"
+            android:background="@color/half_white"
+            app:layout_constraintBottom_toBottomOf="@+id/v22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/v22"
+            app:layout_constraintTop_toTopOf="@+id/v22" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v21"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/half_white"
+            app:layout_constraintBottom_toBottomOf="@+id/v22"
+            app:layout_constraintEnd_toStartOf="@+id/v22"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v22" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="36dp"
+            android:background="@drawable/chat_mine_view"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="6dp"
+            android:text="너가 두번째로 들어왔다 ㅋㅋ"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v22" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/chat_partner_view"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="6dp"
+            android:text="이건 다른 사람의 채팅 들들들 입니다"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/v42"
+            app:layout_constraintTop_toBottomOf="@+id/v3" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:visibility="gone"
+            android:id="@+id/v42"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:src="@color/gray_900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v43" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:text="이름"
+            android:textColor="@color/white"
+            android:textSize="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/v42"
+            app:layout_constraintStart_toStartOf="@+id/v43" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v51"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/half_white"
+            app:layout_constraintBottom_toBottomOf="@+id/v52"
+            app:layout_constraintEnd_toStartOf="@+id/v52"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v52" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/neodgm_pro"
+            android:gravity="center"
+            android:text="BackEnd지인호님이 입장하셨습니다."
+            android:textColor="@color/half_white"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v43" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v53"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="4dp"
+            android:background="@color/half_white"
+            app:layout_constraintBottom_toBottomOf="@+id/v52"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/v52"
+            app:layout_constraintTop_toTopOf="@+id/v52" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v23"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="4dp"
+            android:background="@color/half_white"
+            app:layout_constraintBottom_toBottomOf="@+id/v22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/v22"
+            app:layout_constraintTop_toTopOf="@+id/v22" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v63"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/chat_partner_view"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="6dp"
+            android:text="안녕하세요 ㅎㅎ"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/v42"
+            app:layout_constraintTop_toBottomOf="@+id/v62" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:visibility="gone"
+            android:id="@+id/v61"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:layout_marginStart="16dp"
+            android:src="@color/gray_900"
+            app:layout_constraintBottom_toBottomOf="@+id/v63"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v63" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v62"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/noto_sans_kr_bold"
+
+            android:text="@string/backend"
+            android:textColor="@color/white"
+
+            android:textSize="8dp"
+            app:layout_constraintStart_toStartOf="@+id/v43"
+            app:layout_constraintTop_toBottomOf="@+id/v52" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v71"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/half_white"
+            app:layout_constraintBottom_toBottomOf="@+id/v72"
+            app:layout_constraintEnd_toStartOf="@+id/v72"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v72" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v72"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/neodgm_pro"
+            android:gravity="center"
+            android:text="Android 차경민님이 입장하셨습니다."
+            android:textColor="@color/half_white"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v63" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v73"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="4dp"
+            android:background="@color/half_white"
+            app:layout_constraintBottom_toBottomOf="@+id/v72"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/v72"
+            app:layout_constraintTop_toTopOf="@+id/v72" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v81"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/half_white"
+            app:layout_constraintBottom_toBottomOf="@+id/v82"
+            app:layout_constraintEnd_toStartOf="@+id/v82"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v82" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v82"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/neodgm_pro"
+            android:gravity="center"
+            android:text="Android 차경민님이 입장하셨습니다."
+            android:textColor="@color/half_white"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v72" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v83"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="4dp"
+            android:background="@color/half_white"
+            app:layout_constraintBottom_toBottomOf="@+id/v82"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/v82"
+            app:layout_constraintTop_toTopOf="@+id/v82" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v93"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/chat_partner_view"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="6dp"
+            android:text="안녕하세요 ㅎㅎ"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/v42"
+            app:layout_constraintTop_toBottomOf="@+id/v92" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:visibility="gone"
+            android:id="@+id/v91"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:layout_marginStart="16dp"
+            android:src="@color/gray_900"
+            app:layout_constraintBottom_toBottomOf="@+id/v93"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v93" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v92"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:text="@string/android"
+            android:textColor="@color/white"
+
+            android:textSize="8dp"
+            app:layout_constraintStart_toStartOf="@+id/v43"
+            app:layout_constraintTop_toBottomOf="@+id/v82" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v103"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/chat_partner_view"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="6dp"
+            android:text="안녕하세요 ㅎㅎ"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/v101"
+            app:layout_constraintTop_toBottomOf="@+id/v102" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:visibility="gone"
+            android:id="@+id/v101"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:layout_marginStart="16dp"
+            android:src="@color/gray_900"
+            app:layout_constraintBottom_toBottomOf="@+id/v103"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v103" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v102"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:text="@string/android"
+            android:textColor="@color/white"
+            android:textSize="8dp"
+            app:layout_constraintStart_toStartOf="@+id/v43"
+            app:layout_constraintTop_toBottomOf="@+id/v93" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="36dp"
+            android:background="@drawable/chat_mine_view"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="6dp"
+            android:text="ㅈ..죄송해요..시작할게요"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v103" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

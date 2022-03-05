@@ -21,7 +21,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/v52"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="73dp"
@@ -47,7 +47,7 @@
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView3"
+                app:layout_constraintTop_toBottomOf="@id/v52"
                 tools:text="jangseokeyeon1110@gmail.com으로 6자리 코드를 전송했습니다." />
 
             <LinearLayout

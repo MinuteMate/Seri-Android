@@ -1,9 +1,11 @@
 package com.hackaton.seriandroid.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import com.hackaton.seriandroid.R
 import com.hackaton.seriandroid.databinding.ActivityMainBinding
 import com.hackaton.seriandroid.ui.base.BaseActivity
+import com.hackaton.seriandroid.ui.game.activity.BeforeActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding> (
     R.layout.activity_main
@@ -53,11 +55,11 @@ class MainActivity : BaseActivity<ActivityMainBinding> (
     }
 
     private fun joinClass(gameCode: Int) {
-        showShortToast(gameCode.toString())
+        startActivity(Intent(this, BeforeActivity::class.java))
     }
 
     private fun createGame(gameName: String) {
-        showShortToast(gameName.toString())
+        startActivity(Intent(this, BeforeActivity::class.java))
     }
 
     private fun fixProfileDialog() {
@@ -70,6 +72,6 @@ class MainActivity : BaseActivity<ActivityMainBinding> (
     }
 
     private fun fixProfile(nickname: String) {
-
+        showShortToast("success")
     }
 }

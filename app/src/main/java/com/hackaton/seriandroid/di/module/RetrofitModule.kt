@@ -15,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
 
-    private val BASE_URL = "https://jsonplaceholder.typicode.com/"
+    private val BASE_URL = "http://api.minutemate.kro.kr:8080/"
 
     @Provides
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor =

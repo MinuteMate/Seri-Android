@@ -20,10 +20,16 @@ class MainActivity : BaseActivity<ActivityMainBinding> (
         binding.ivHelp.setOnClickListener {
             helpDialog()
         }
+        binding.tvCreateGame.setOnClickListener {
+            createGameDialog()
+        }
+        binding.ivUserSet.setOnClickListener {
+            fixProfileDialog()
+        }
     }
 
     private fun classCodeDialog() {
-        RoomCodeDialog(this).run {
+        GameCodeDialog(this).run {
             classCode.observe(this@MainActivity, {
                 joinClass(it.toInt())
             })
@@ -37,7 +43,33 @@ class MainActivity : BaseActivity<ActivityMainBinding> (
         }
     }
 
-    private fun joinClass(classCode: Int) {
-        showShortToast(classCode.toString())
+    private fun createGameDialog() {
+        CreateGameDialog(this).run {
+            gameName.observe(this@MainActivity, {
+                createGame(it)
+            })
+            start()
+        }
+    }
+
+    private fun joinClass(gameCode: Int) {
+        showShortToast(gameCode.toString())
+    }
+
+    private fun createGame(gameName: String) {
+        showShortToast(gameName.toString())
+    }
+
+    private fun fixProfileDialog() {
+        FixUserProfileDialog(this).run {
+            nickname.observe(this@MainActivity, {
+                fixProfile(it)
+            })
+            start()
+        }
+    }
+
+    private fun fixProfile(nickname: String) {
+
     }
 }

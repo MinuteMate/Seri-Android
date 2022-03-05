@@ -10,7 +10,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.hackaton.seriandroid.R
 
-class RoomCodeDialog(context: Context) {
+class GameCodeDialog(context: Context) {
     private val dlg = Dialog(context)
 
     private lateinit var etClassCode: EditText
@@ -25,7 +25,7 @@ class RoomCodeDialog(context: Context) {
         dlg.setContentView(R.layout.class_code_dialog)
         dlg.setCancelable(false)
 
-        etClassCode = dlg.findViewById(R.id.etClassCode)
+        etClassCode = dlg.findViewById(R.id.etGameName)
         ivNext = dlg.findViewById(R.id.ivNext)
         tvCancel = dlg.findViewById(R.id.tvCancel)
 

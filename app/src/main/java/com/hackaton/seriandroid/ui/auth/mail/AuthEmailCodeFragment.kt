@@ -3,6 +3,7 @@ package com.hackaton.seriandroid.ui.auth.mail
 import android.content.Context
 import android.os.CountDownTimer
 import android.view.KeyEvent
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.FrameLayout
@@ -58,6 +59,10 @@ class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
         }
 
         override fun onFinish() {
+            binding.authEmailCodeReSend.visibility = View.VISIBLE
+            binding.authEmailCodeTime.visibility = View.INVISIBLE
+
+
         }
     }
 
@@ -89,7 +94,15 @@ class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
         setListener()
         initFocus()
         mCountDown.start()
+        binding.fragment=this@AuthEmailCodeFragment
 
+    }
+    fun timeReSendOnClickEvent() {
+        binding.authEmailCodeReSend.setOnClickListener {
+            mCountDown.start()
+            binding.authEmailCodeReSend.visibility = View.INVISIBLE
+            binding.authEmailCodeTime.visibility = View.VISIBLE
+        }
     }
 
 
@@ -180,12 +193,16 @@ class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
         lifecycleScope.launch {
             viewModel.fetchVerifyCode(otpCode)
 
-            viewModel.optSuccess.observe(viewLifecycleOwner){
+            viewModel.optSuccess.observe(viewLifecycleOwner) {
+                if (it){
                 findNavController().navigate(R.id.action_authEmailCodeFragment_to_authPasswordFragment)
 
+                }else{
+                    showShortToast("데이터가 없습니다.")
+                }
             }
-            viewModel.optFail.observe(viewLifecycleOwner){
-             showShortToast(it)
+            viewModel.optFail.observe(viewLifecycleOwner) {
+                showShortToast(it)
 
             }
 

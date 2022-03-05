@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/auth_email_otp_background.xml" value="0.33611111111111114" />
+        <entry key="app/src/main/res/drawable/auth_login_btn_radius.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/drawable/auth_login_line.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/drawable/auth_profile_circle.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/drawable/auth_profile_plus_img.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/drawable/auth_right_img.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/drawable/bg.vote_player.xml" value="0.24635416666666668" />
+        <entry key="app/src/main/res/drawable/bg_dialog_code.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/drawable/bg_dialog_code_out.xml" value="0.33055555555555555" />
+        <entry key="app/src/main/res/drawable/bg_dialog_stroke_out.xml" value="0.33055555555555555" />
+        <entry key="app/src/main/res/drawable/bg_dialog_stroke_outline.xml" value="0.33055555555555555" />
+        <entry key="app/src/main/res/drawable/bg_et_chat.xml" value="0.33055555555555555" />
+        <entry key="app/src/main/res/drawable/bg_help_dialog_outline.xml" value="0.33055555555555555" />
+        <entry key="app/src/main/res/drawable/bg_splash_login.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/drawable/bg_splash_register.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/drawable/chat_mine_view.xml" value="0.33611111111111114" />
+        <entry key="app/src/main/res/drawable/chat_partner_view.xml" value="0.33611111111111114" />
+        <entry key="app/src/main/res/drawable/fix_user_profile_dialog_outline.xml" value="0.24635416666666668" />
+        <entry key="app/src/main/res/drawable/join_game_dialog.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/drawable/progressbar_horizontal.xml" value="0.33055555555555555" />
+        <entry key="app/src/main/res/layout/activity_auth_main.xml" value="0.19157608695652173" />
+        <entry key="app/src/main/res/layout/activity_game.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2839200865996566" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.20106563491999352" />
+        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.39370559554445245" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.3043165467625899" />
+        <entry key="app/src/main/res/layout/activity_vote.xml" value="0.418957345971564" />
+        <entry key="app/src/main/res/layout/class_code_dialog.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/create_game_dialog.xml" value="0.5901875901875901" />
+        <entry key="app/src/main/res/layout/fix_user_profile_dialog.xml" value="0.21979752284525386" />
+        <entry key="app/src/main/res/layout/fragment_auth_email_code.xml" value="0.19157608695652173" />
+        <entry key="app/src/main/res/layout/fragment_auth_email_input.xml" value="0.19157608695652173" />
+        <entry key="app/src/main/res/layout/fragment_auth_finish.xml" value="0.182370820668693" />
+        <entry key="app/src/main/res/layout/fragment_auth_login.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_auth_login_main.xml" value="0.19746376811594202" />
+        <entry key="app/src/main/res/layout/fragment_auth_name_input.xml" value="0.182370820668693" />
+        <entry key="app/src/main/res/layout/fragment_auth_password.xml" value="0.19746376811594202" />
+        <entry key="app/src/main/res/layout/fragment_auth_password_re.xml" value="0.19157608695652173" />
+        <entry key="app/src/main/res/layout/fragment_auth_set_profile.xml" value="0.19746376811594202" />
+        <entry key="app/src/main/res/layout/game_chat_description.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/game_chat_mine.xml" value="0.182370820668693" />
+        <entry key="app/src/main/res/layout/game_chat_parter.xml" value="0.40988372093023256" />
+        <entry key="app/src/main/res/layout/help_dialog.xml" value="0.45" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.44816636622638095" />
+      </ProjectState>
+    </option>
   </component>
 </project>

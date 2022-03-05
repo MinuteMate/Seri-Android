@@ -7,6 +7,7 @@ import com.hackaton.seriandroid.databinding.ActivitySplashBinding
 import com.hackaton.seriandroid.ui.auth.AuthMainActivity
 import com.hackaton.seriandroid.ui.signin.activity.SignInActivity
 import com.hackaton.seriandroid.ui.base.BaseActivity
+import com.hackaton.seriandroid.ui.game.activity.VoteActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @SuppressLint("CustomSplashScreen")

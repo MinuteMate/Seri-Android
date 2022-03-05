@@ -19,6 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginTop="107dp"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:includeFontPadding="false"
             android:text="세대갈등\n라이어게임."
             android:textColor="@color/black"
             android:textSize="25sp"
@@ -35,14 +37,17 @@
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/auth_login_btn"
-                android:backgroundTint="@color/white"
-                android:text="로그인 하기"
-                android:onClick="@{()->activity.loginButtonClickEvent()}"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
                 android:background="@drawable/auth_login_btn_radius"
-                android:textColor="@color/black" />
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:includeFontPadding="false"
+                android:onClick="@{()->activity.loginButtonClickEvent()}"
+                android:text="로그인 하기"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
 
 
             <LinearLayout
@@ -75,20 +80,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:fontFamily="@font/noto_sans_kr_regular"
                 android:gravity="center"
-                android:text="계정이 없으신가요?" />
+                android:includeFontPadding="false"
+                android:text="계정이 없으신가요?"
+                android:textColor="@color/black"
+                android:textSize="9sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="@{()->activity.signUpButtonClickEvent()}"
-
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/black"
                 android:id="@+id/auth_signUp_btn"
-                android:text="회원가입 하기"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/auth_login_btn_radius"
-                android:textColor="@color/white" />
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:includeFontPadding="false"
+                android:onClick="@{()->activity.signUpButtonClickEvent()}"
+                android:text="회원가입 하기"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
 
 
         </LinearLayout>

@@ -3,5 +3,7 @@
     android:padding="10dp"
     android:shape="rectangle">
     <corners android:radius="10dp" />
+    <size
+        android:width="270dp" android:height="30dp"/>
 
 </shape>

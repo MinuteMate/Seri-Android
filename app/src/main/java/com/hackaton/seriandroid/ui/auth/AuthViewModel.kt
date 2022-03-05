@@ -69,10 +69,11 @@ class AuthViewModel @Inject constructor(
         when (val response = repository.verifyEmail(number)) {
             is ResultWrapper.Success -> {
                 _emailToken.value = response.value?.token
-                _optSuccess.value=true
+                Log.d("TAG", "fetchVerifyCode: ${response} ")
+                _optSuccess.value = response.value != null
             }
-           is ResultWrapper.Failed->{
-               _optFail.value=response.error?.errorMessage
+            is ResultWrapper.Failed -> {
+                _optFail.value = response.error?.errorMessage
             }
         }
 

@@ -32,7 +32,7 @@ class SignInViewModel @Inject constructor(
                     event(Event.ErrorMessage(signIn.error?.message!!))
                 }
                 is ResultWrapper.Success -> {
-                    Log.d(TAG, "signIn: success")
+                    event(Event.Success(true))
                 }
             }
         }

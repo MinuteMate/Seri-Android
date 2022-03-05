@@ -9,6 +9,7 @@ import com.hackaton.seriandroid.data.remote.dto.request.SignInRequest
 import com.hackaton.seriandroid.databinding.ActivitySignInBinding
 import com.hackaton.seriandroid.ui.auth.AuthMainActivity
 import com.hackaton.seriandroid.ui.base.BaseActivity
+import com.hackaton.seriandroid.ui.main.MainActivity
 import com.hackaton.seriandroid.ui.signin.viewmodel.SignInViewModel
 import com.hackaton.seriandroid.utils.repeatOnStarted
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,7 +40,7 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(
     }
 
     private fun successLogin() {
-        val intent = Intent(this, AuthMainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
@@ -61,6 +62,10 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(
                     vm.signIn(SignInRequest(email, password))
                 }
             }
+        }
+
+        binding.tvSignUp.setOnClickListener {
+            startActivity(Intent(this, AuthMainActivity::class.java))
         }
     }
 }

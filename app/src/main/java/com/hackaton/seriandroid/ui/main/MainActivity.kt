@@ -1,6 +1,5 @@
 package com.hackaton.seriandroid.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.hackaton.seriandroid.R
 import com.hackaton.seriandroid.databinding.ActivityMainBinding
@@ -15,5 +14,30 @@ class MainActivity : BaseActivity<ActivityMainBinding> (
     }
 
     override fun initView() {
+        binding.tvPlayGame.setOnClickListener {
+            classCodeDialog()
+        }
+        binding.ivHelp.setOnClickListener {
+            helpDialog()
+        }
+    }
+
+    private fun classCodeDialog() {
+        RoomCodeDialog(this).run {
+            classCode.observe(this@MainActivity, {
+                joinClass(it.toInt())
+            })
+            start()
+        }
+    }
+
+    private fun helpDialog() {
+        GuideDialog(this).run {
+            start()
+        }
+    }
+
+    private fun joinClass(classCode: Int) {
+        showShortToast(classCode.toString())
     }
 }

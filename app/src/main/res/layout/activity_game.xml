@@ -10,156 +10,717 @@
             type="com.hackaton.seriandroid.ui.game.activity.GameActivity" />
     </data>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_chat_page"
         tools:context=".ui.game.activity.GameActivity">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_send"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <EditText
-            android:id="@+id/etChat"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="5dp"
-            android:background="@drawable/bg_et_chat"
-            android:fontFamily="@font/noto_sans_kr_bold"
-            android:hint="채팅 보내기..."
-            android:paddingLeft="16dp"
-            android:textSize="11sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="12dp"
-            android:fontFamily="@font/noto_sans_kr_bold"
-            android:text="40초"
-            android:textColor="@color/white"
-            android:textSize="8sp"
-            app:layout_constraintBottom_toTopOf="@+id/etChat"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/progressBar" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="@android:style/Widget.Material.ProgressBar.Horizontal"
-            android:layout_width="0dp"
-            android:layout_height="7dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="12dp"
-            android:max="100"
-            android:progress="50"
-            android:progressDrawable="@drawable/progressbar_horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/etChat"
-            app:layout_constraintEnd_toStartOf="@+id/textView8"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/game_before"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_chat_page"
+            android:visibility="gone">
 
 
-        <TextView
-            android:id="@+id/tvMessage2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="128dp"
-            android:layout_marginEnd="36dp"
-            android:background="@drawable/chat_mine_view"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="6dp"
-            android:text="이건 나의 채팅입니다 나의 채팅입니다"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_send"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:fontFamily="@font/neodgm_pro"
-            android:gravity="center"
-            android:textColor="@color/half_white"
-            android:text="이건 설명입니다 이건 설명입니다"
-            android:textSize="11sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/etChat"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/bg_et_chat"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:hint="채팅 보내기..."
+                android:paddingLeft="16dp"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="4dp"
-            android:background="@color/half_white"
-            app:layout_constraintBottom_toBottomOf="@+id/textView7"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView7"
-            app:layout_constraintTop_toTopOf="@+id/textView7" />
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="40초"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toTopOf="@+id/etChat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/progressBar" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginEnd="4dp"
-            android:background="@color/half_white"
-            app:layout_constraintBottom_toBottomOf="@+id/textView7"
-            app:layout_constraintEnd_toStartOf="@+id/textView7"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView7" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="7dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="12dp"
+                android:max="100"
+                android:progress="50"
+                android:progressDrawable="@drawable/progressbar_horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/etChat"
+                app:layout_constraintEnd_toStartOf="@+id/textView8"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/neodgm_pro"
+                android:gravity="center"
+                android:text="이건 설명입니다 이건 설명입니다"
+                android:textColor="@color/half_white"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/half_white"
+                app:layout_constraintBottom_toBottomOf="@+id/textView1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView1"
+                app:layout_constraintTop_toTopOf="@+id/textView1" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/half_white"
+                app:layout_constraintBottom_toBottomOf="@+id/textView1"
+                app:layout_constraintEnd_toStartOf="@+id/textView1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView1" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/neodgm_pro"
+                android:gravity="center"
+                android:text="안드 싫어 세현님이 입장하셨습니다."
+                android:textColor="@color/half_white"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/half_white"
+                app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/half_white"
+                app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/tvMessage1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="36dp"
+                android:background="@drawable/chat_mine_view"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="6dp"
+                android:text="너가 두번째로 들어왔다 ㅋㅋ"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/chat_partner_view"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="6dp"
+                android:text="이건 다른 사람의 채팅 들들들 입니다"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/tvProfile"
+                app:layout_constraintTop_toBottomOf="@+id/tvMessage1" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/tvProfile"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:src="@color/gray_900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvMessage" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="이름"
+                android:textColor="@color/white"
+                android:textSize="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvProfile"
+                app:layout_constraintStart_toStartOf="@+id/tvMessage" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/half_white"
+                app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                app:layout_constraintEnd_toStartOf="@+id/textView3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/neodgm_pro"
+                android:gravity="center"
+                android:text="BackEnd지인호님이 입장하셨습니다."
+                android:textColor="@color/half_white"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMessage" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/half_white"
+                app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView3"
+                app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/half_white"
+                app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/tvMessage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/chat_partner_view"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="6dp"
+                android:text="안녕하세요 ㅎㅎ"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/tvProfile"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/tvProfile2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:layout_marginStart="16dp"
+                android:src="@color/gray_900"
+                app:layout_constraintBottom_toBottomOf="@+id/tvMessage2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvMessage2" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+
+                android:text="@string/backend"
+                android:textColor="@color/white"
+
+                android:textSize="8dp"
+                app:layout_constraintStart_toStartOf="@+id/tvMessage"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/half_white"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_line"
+                app:layout_constraintEnd_toStartOf="@+id/textView_line"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView_line" />
+
+            <TextView
+                android:id="@+id/textView_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/neodgm_pro"
+                android:gravity="center"
+                android:text="Android 차경민님이 입장하셨습니다."
+                android:textColor="@color/half_white"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMessage2" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/half_white"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView_line"
+                app:layout_constraintTop_toTopOf="@+id/textView_line" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/half_white"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_line_1"
+                app:layout_constraintEnd_toStartOf="@+id/textView_line_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView_line_1" />
+
+            <TextView
+                android:id="@+id/textView_line_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/neodgm_pro"
+                android:gravity="center"
+                android:text="Android 차경민님이 입장하셨습니다."
+                android:textColor="@color/half_white"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_line" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/half_white"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_line_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView_line_1"
+                app:layout_constraintTop_toTopOf="@+id/textView_line_1" />
+
+            <TextView
+                android:id="@+id/tvMessage3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/chat_partner_view"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="6dp"
+                android:text="안녕하세요 ㅎㅎ"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/tvProfile"
+                app:layout_constraintTop_toBottomOf="@+id/textView3_k" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/tvProfile3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:layout_marginStart="16dp"
+                android:src="@color/gray_900"
+                app:layout_constraintBottom_toBottomOf="@+id/tvMessage3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvMessage3" />
+
+            <TextView
+                android:id="@+id/textView3_k"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="@string/android"
+                android:textColor="@color/white"
+
+                android:textSize="8dp"
+                app:layout_constraintStart_toStartOf="@+id/tvMessage"
+                app:layout_constraintTop_toBottomOf="@+id/textView_line_1" />
+
+            <TextView
+                android:id="@+id/tvMessage4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/chat_partner_view"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="6dp"
+                android:text="안녕하세요 ㅎㅎ"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/tvProfile4"
+                app:layout_constraintTop_toBottomOf="@+id/textView3_b" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/tvProfile4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:layout_marginStart="16dp"
+                android:src="@color/gray_900"
+                app:layout_constraintBottom_toBottomOf="@+id/tvMessage4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvMessage4" />
+
+            <TextView
+                android:id="@+id/textView3_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="@string/android"
+                android:textColor="@color/white"
+                android:textSize="8dp"
+                app:layout_constraintStart_toStartOf="@+id/tvMessage"
+                app:layout_constraintTop_toBottomOf="@+id/tvMessage3" />
+
+            <TextView
+                android:id="@+id/tvMessage_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="36dp"
+                android:background="@drawable/chat_mine_view"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="6dp"
+                android:text="ㅈ..죄송해요..시작할게요"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMessage4" />
+
+            <TextView
+                android:id="@+id/textView3_n"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="누룽지123 석연"
+                android:textColor="@color/white"
+                android:textSize="8dp"
+                app:layout_constraintStart_toStartOf="@+id/tvProfile4"
+                app:layout_constraintTop_toBottomOf="@+id/tvMessage_me" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:src="@drawable/group1515"
+                app:layout_constraintStart_toStartOf="@+id/tvProfile4"
+                app:layout_constraintTop_toBottomOf="@+id/textView3_n" />
 
 
-        <TextView
-            android:id="@+id/tvMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="2dp"
-            android:background="@drawable/chat_partner_view"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="6dp"
-            android:text="이건 다른 사람의 채팅 들들들 입니다"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/tvProfile"
-            app:layout_constraintStart_toEndOf="@+id/tvProfile"
-            app:layout_constraintTop_toBottomOf="@+id/textView9"
-            app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/tvProfile"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="84dp"
-            android:src="@color/gray_900"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="64dp"
-            android:fontFamily="@font/noto_sans_kr_bold"
-            android:text="이름"
-            android:textColor="@color/white"
-            android:textSize="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/tvProfile"
-            app:layout_constraintStart_toStartOf="@+id/tvMessage"
-            app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/game_start_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_21" />
+
+                <ImageView
+                    android:id="@+id/game_start_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_22" />
+
+                <ImageView
+                    android:id="@+id/game_start_3"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/topic" />
+
+                <ImageView
+                    android:id="@+id/game_start_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1517" />
+
+                <ImageView
+                    android:id="@+id/game_start_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/grouop_1518" />
+
+                <ImageView
+                    android:id="@+id/game_start_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1519" />
+
+                <ImageView
+                    android:id="@+id/game_start_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1520" />
+
+                <ImageView
+                    android:id="@+id/game_start_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1521" />
+
+                <ImageView
+                    android:id="@+id/game_start_9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group1522" />
+
+                <ImageView
+                    android:id="@+id/game_start_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1523" />
+
+                <ImageView
+                    android:id="@+id/game_start_12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1524" />
+
+                <ImageView
+                    android:id="@+id/game_start_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1525" />
+
+                <ImageView
+                    android:id="@+id/game_start_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1526" />
+
+                <ImageView
+                    android:id="@+id/game_start_15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/grup_1527" />
+
+                <ImageView
+                    android:id="@+id/game_start_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1528" />
+
+                <ImageView
+                    android:id="@+id/game_start_17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1529" />
+
+                <ImageView
+                    android:id="@+id/game_start_18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/group_82" />
+
+                <ImageView
+                    android:id="@+id/game_start_19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+
+                    android:src="@drawable/group_1531" />
+
+                <ImageView
+                    android:id="@+id/game_start_20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1532" />
+
+                <ImageView
+                    android:id="@+id/game_start_21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+
+                    android:src="@drawable/group_1533" />
+
+                <ImageView
+                    android:id="@+id/game_start_22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1534" />
+
+                <ImageView
+                    android:id="@+id/game_start_23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+
+                    android:src="@drawable/group_1535" />
+                <ImageView
+                    android:id="@+id/game_start_24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1536" />
+                <ImageView
+                    android:id="@+id/game_start_25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1537" />
+
+                <ImageView
+                    android:id="@+id/game_start_26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1538" />
+                <ImageView
+                    android:id="@+id/game_start_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1540" />
+                <ImageView
+                    android:id="@+id/game_start_28"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1542" />
+                <ImageView
+                    android:id="@+id/game_start_29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1543" />
+                <ImageView
+                    android:id="@+id/game_start_30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1546" />
+                <ImageView
+                    android:id="@+id/game_start_31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/group_93" />
+                <ImageView
+                    android:id="@+id/game_start_32"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1547" />
+
+                <ImageView
+                    android:id="@+id/game_start_33"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/group_1496" />
+            </LinearLayout>
+        </ScrollView>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

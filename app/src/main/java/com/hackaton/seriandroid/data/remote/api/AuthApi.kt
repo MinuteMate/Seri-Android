@@ -1,5 +1,6 @@
 package com.hackaton.seriandroid.data.remote.api
 
+import com.hackaton.seriandroid.data.remote.dto.request.EmailRequest
 import com.hackaton.seriandroid.data.remote.dto.request.SignInRequest
 import com.hackaton.seriandroid.data.remote.dto.request.SignUpRequest
 import com.hackaton.seriandroid.data.remote.dto.response.FetchVerifyCodeResponse
@@ -16,7 +17,7 @@ interface AuthApi {
 
     @POST("api/v1/authorize/email")
     suspend fun postAuthorizeEmail(
-        @Body email: String
+        @Body request : EmailRequest
     ): Response<Unit>
 
     @GET("api/v1/authorize/email/{number}")

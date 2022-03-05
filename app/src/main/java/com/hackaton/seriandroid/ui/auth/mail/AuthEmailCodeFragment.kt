@@ -1,6 +1,7 @@
 package com.hackaton.seriandroid.ui.auth.mail
 
 import android.content.Context
+import android.os.CountDownTimer
 import android.view.KeyEvent
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
@@ -8,18 +9,24 @@ import android.widget.FrameLayout
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.hackaton.seriandroid.R
 import com.hackaton.seriandroid.databinding.FragmentAuthEmailCodeBinding
+import com.hackaton.seriandroid.ui.auth.AuthMainActivity
 import com.hackaton.seriandroid.ui.auth.AuthViewModel
-import com.hackaton.seriandroid.ui.auth.login.LoginActivity
 import com.hackaton.seriandroid.ui.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
+
+
+@AndroidEntryPoint
 
 class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
     (R.layout.fragment_auth_email_code) {
 
 
-    private var otpCode = 0
+
     private val viewModel: AuthViewModel by activityViewModels()
+    private val args by navArgs<AuthEmailCodeFragmentArgs>()
 
     private val frameLayout: FrameLayout by lazy {
         binding.authOtpFrameLayout
@@ -42,16 +49,21 @@ class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
     private val otpTextSix: EditText by lazy {
         binding.emailCodeSixText
     }
+    private val mCountDown: CountDownTimer = object : CountDownTimer(300001, 1000) {
+        override fun onTick(millisUntilFinished: Long) {
+            //update the UI with the new count
+            binding.authEmailCodeTime.text =
+                ("남은시간 ${millisUntilFinished % 3600000 / 60000}: ${millisUntilFinished % 3600000 % 60000 / 1000}")
+        }
 
-
-    private val email: String by lazy {
-        viewModel.email.value.toString()
+        override fun onFinish() {
+        }
     }
 
     private fun setListener() {
         frameLayout.setOnClickListener {
             val inputManager =
-                (activity as LoginActivity).getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                (activity as AuthMainActivity).getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputManager.hideSoftInputFromWindow(frameLayout.windowToken, 0)
         }
         setTextChangeListener(fromEditText = otpTextOne, targetEditText = otpTextTwo)
@@ -72,16 +84,20 @@ class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
 
     override fun initView() {
         postEmailCode()
-        binding.authEmailCodeContent.text = "${email}으로 6자리 코드르를 전송했습니다."
+        binding.authEmailCodeContent.text = "${args.email}으로 6자리 코드르를 전송했습니다."
+        setListener()
+        initFocus()
+        mCountDown.start()
 
     }
+
 
     private fun initFocus() {
         otpTextOne.isEnabled = true
         otpTextOne.postDelayed({
             otpTextOne.requestFocus()
             val inputMethodManager =
-                (activity as LoginActivity).getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                (activity as AuthMainActivity).getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.showSoftInput(otpTextOne, InputMethodManager.SHOW_FORCED)
         }, 500)
     }
@@ -146,6 +162,7 @@ class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
         }
     }
 
+
     private fun verifyOTPCode() {
         val otpCode = otpTextOne.text.toString().trim() +
                 otpTextTwo.text.toString().trim() +
@@ -158,22 +175,25 @@ class AuthEmailCodeFragment : BaseFragment<FragmentAuthEmailCodeBinding>
             return
 
         if (otpCode == otpCode) {
+
             findNavController().navigate(R.id.action_authEmailCodeFragment_to_authPasswordFragment)
             val inputManager =
-                (activity as LoginActivity).getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                (activity as AuthMainActivity).getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputManager.hideSoftInputFromWindow(frameLayout.windowToken, 0)
             return
-        }else{
+        } else {
             showShortToast("인증번호가 맞지 않습니다.")
         }
 
     }
 
     private fun postEmailCode() {
-        if (email.isNotEmpty()) {
+        if (args.email.isNotEmpty()) {
             // 코드 전송 코드
         } else {
             showShortToast("코드 전송이 실패했습니다.")
+            reset()
         }
     }
 }
+

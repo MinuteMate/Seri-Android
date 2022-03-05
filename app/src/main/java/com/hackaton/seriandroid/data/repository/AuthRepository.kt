@@ -1,5 +1,7 @@
 package com.hackaton.seriandroid.data.repository
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import com.hackaton.seriandroid.data.local.datasource.LocalAuthDataSource
 import com.hackaton.seriandroid.data.remote.datasource.RemoteAuthDataSource
 import com.hackaton.seriandroid.data.remote.dto.request.SignInRequest
@@ -15,20 +17,30 @@ class AuthRepository @Inject constructor(
     private val localAuthDataSource: LocalAuthDataSource
 ) {
 
-    suspend fun signIn(signInRequest: SignInRequest): ResultWrapper<SignInResponse?> {
-        val response = remoteAuthDataSource.signIn(signInRequest)
+    suspend fun signIn(signInRequest: SignInRequest): ResultWrapper<Unit?> {
 
-        when (response) {
-            is ResultWrapper.Success -> saveAccount(signInRequest)
+        return when (val call = remoteAuthDataSource.signIn(signInRequest)) {
+            is ResultWrapper.NetworkError -> ResultWrapper.NetworkError
+            is ResultWrapper.Failed -> ResultWrapper.Failed()
+            is ResultWrapper.Success -> {
+                saveAccount(signInRequest)
+                call.value?.let { saveToken(it) }
+                ResultWrapper.Success(Unit)
+            }
         }
-
-        return response
     }
 
     private suspend fun saveAccount(signInRequest: SignInRequest) {
         localAuthDataSource.apply {
             setId(signInRequest.email)
             setPw(signInRequest.password)
+        }
+    }
+
+    private suspend fun saveToken(signInResponse: SignInResponse) {
+        localAuthDataSource.apply {
+            setAccessToken(signInResponse.accessToken)
+            setRefreshToken(signInResponse.refreshToken)
         }
     }
 

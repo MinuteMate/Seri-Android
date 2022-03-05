@@ -5,7 +5,7 @@ import android.content.Intent
 import com.hackaton.seriandroid.R
 import com.hackaton.seriandroid.databinding.ActivitySplashBinding
 import com.hackaton.seriandroid.ui.auth.AuthMainActivity
-import com.hackaton.seriandroid.ui.auth.login.AuthLoginFragment
+import com.hackaton.seriandroid.ui.signin.activity.SignInActivity
 import com.hackaton.seriandroid.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,8 +16,10 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(
 ) {
     override fun initView() {
         binding.tvSplashSignIn.setOnClickListener {
-            val dialog = AuthLoginFragment()
-            dialog.show(supportFragmentManager, "loginDialog")
+            val intent = Intent(this, SignInActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
         }
 
         binding.tvSplashSignUp.setOnClickListener {

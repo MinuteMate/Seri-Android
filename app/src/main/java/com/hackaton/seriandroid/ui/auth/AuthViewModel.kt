@@ -27,8 +27,16 @@ class AuthViewModel @Inject constructor(
 
     private val _success = MutableLiveData<Boolean>()
     val success: MutableLiveData<Boolean> get() = _success
+
+    private val _optSuccess = MutableLiveData<Boolean>()
+    val optSuccess: MutableLiveData<Boolean> get() = _optSuccess
+
+
     private val _fail = MutableLiveData<String>()
     val fail: MutableLiveData<String> get() = _fail
+
+    private val _optFail = MutableLiveData<String>()
+    val optFail: MutableLiveData<String> get() = _optFail
     private val _emailToken = MutableLiveData<String>()
     val emailToken: LiveData<String> get() = _emailToken
 
@@ -59,7 +67,13 @@ class AuthViewModel @Inject constructor(
     suspend fun fetchVerifyCode(number: String) {
 
         when (val response = repository.verifyEmail(number)) {
-            is ResultWrapper.Success -> _emailToken.value = response.value?.token
+            is ResultWrapper.Success -> {
+                _emailToken.value = response.value?.token
+                _optSuccess.value=true
+            }
+           is ResultWrapper.Failed->{
+               _optFail.value=response.error?.errorMessage
+            }
         }
 
     }

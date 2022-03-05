@@ -1,6 +1,7 @@
 package com.hackaton.seriandroid.ui.auth.name
 
 import android.util.Log
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.hackaton.seriandroid.R
@@ -12,7 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class AuthNameInputFragment :
     BaseFragment<FragmentAuthNameInputBinding>(R.layout.fragment_auth_name_input) {
-    private val viewModel: AuthViewModel by viewModels()
+    private val viewModel: AuthViewModel by activityViewModels()
 
 
     override fun initView() {

@@ -1,32 +1,40 @@
 package com.hackaton.seriandroid.ui.auth.password
 
+import android.util.Log
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.hackaton.seriandroid.R
 import com.hackaton.seriandroid.databinding.FragmentAuthPasswordBinding
 import com.hackaton.seriandroid.ui.auth.AuthViewModel
 import com.hackaton.seriandroid.ui.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 
 class AuthPasswordFragment :
     BaseFragment<FragmentAuthPasswordBinding>(R.layout.fragment_auth_password) {
-    private val password: String by lazy {
-        binding.passwordText.text.toString()
-    }
+
     private val viewModel: AuthViewModel by activityViewModels()
     override fun initView() {
-        binding.fragment = this@AuthPasswordFragment
-        viewModel.success.observe(viewLifecycleOwner){
-            findNavController().navigate(R.id.action_authPasswordFragment_to_authPasswordReFragment)
-        }
+
+        nextButtonClickEvent()
     }
 
-    private fun passwordNullTest() = password.isNotEmpty()
+    private fun passwordNullTest() = binding.passwordText.text.toString().isNotEmpty()
 
     fun nextButtonClickEvent() {
-        if (passwordNullTest()) {
-            viewModel.getPassword(password)
-        } else {
-            showShortToast("다시 입력해 주세요.")
+        binding.nextBtn.setOnClickListener {
+            if (passwordNullTest()) {
+                viewModel.getPassword(binding.passwordText.text.toString())
+                val action =
+                    AuthPasswordFragmentDirections.actionAuthPasswordFragmentToAuthPasswordReFragment(
+                        binding.passwordText.text.toString()
+                    )
+                findNavController().navigate(action)
+            } else {
+                showShortToast("다시 입력해 주세요.")
+
+            }
         }
     }
 }

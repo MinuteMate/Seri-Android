@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SeriAndroid</string>
+    <string name="backend">BackEnd지인호</string>
+    <string name="android">Android 차경민</string>
 </resources>

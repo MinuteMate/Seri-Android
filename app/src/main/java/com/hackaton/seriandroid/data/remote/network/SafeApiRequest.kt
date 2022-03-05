@@ -17,7 +17,7 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> Response<T>): ResultWrapper<T
                 val errorResponse = convertErrorBody(throwable)
                 ResultWrapper.Failed(code, errorResponse)
             }
-            else -> ResultWrapper.Failed(null, null)
+            else -> ResultWrapper.Failed(null, ErrorResponse(throwable.localizedMessage))
         }
     }
 }

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vote"
+            type="com.hackaton.seriandroid.ui.game.activity.VoteActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="#F9F9F9"
+        android:layout_height="match_parent"
+        tools:context=".ui.game.activity.VoteActivity">
+
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v1_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/neodgm_pro"
+            android:text="투표를 시작합니다."
+            android:textColor="#80000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/view8"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="16dp"
+            android:background="#80000000"
+            app:layout_constraintBottom_toBottomOf="@+id/v1_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/v1_2"
+            app:layout_constraintTop_toTopOf="@+id/v1_2" />
+
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v2_1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="4dp"
+            android:background="#80000000"
+            app:layout_constraintBottom_toBottomOf="@+id/v2_2"
+            app:layout_constraintEnd_toStartOf="@+id/v2_2"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v2_2"
+            app:layout_constraintVertical_bias="0.636" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v2_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/neodgm_pro"
+            android:text="라이어를 투표해주세요."
+            android:textColor="#80000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v1_2" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v2_3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="16dp"
+            android:background="#80000000"
+            app:layout_constraintBottom_toBottomOf="@+id/v2_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/v2_2"
+            app:layout_constraintTop_toTopOf="@+id/v2_2" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v3_1"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v2_2" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v3_3"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_vote_player"
+            android:fontFamily="@font/neodgm_pro"
+            android:gravity="center"
+            android:text="마을회장 최씨"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/v3_1"
+            app:layout_constraintTop_toBottomOf="@+id/v3_2" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v3_2"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_vote_player"
+            android:fontFamily="@font/neodgm_pro"
+            android:gravity="center"
+            android:text="누릉지123 석연"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/v3_1"
+            app:layout_constraintTop_toTopOf="@+id/v3_1" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v3_5"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_vote_player"
+            android:fontFamily="@font/neodgm_pro"
+            android:gravity="center"
+            android:text="Android차경민"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/v3_1"
+            app:layout_constraintTop_toBottomOf="@+id/v3_4" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v3_4"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_vote_player"
+            android:fontFamily="@font/neodgm_pro"
+            android:gravity="center"
+            android:text="안드 싫어 세현"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/v3_1"
+            app:layout_constraintTop_toBottomOf="@+id/v3_3" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/v3_6"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_vote_player"
+            android:fontFamily="@font/neodgm_pro"
+            android:gravity="center"
+            android:text="Backend지인호"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/v3_1"
+            app:layout_constraintTop_toBottomOf="@+id/v3_5" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/v3_p_1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/v3_2"
+            app:layout_constraintStart_toEndOf="@+id/v3_2"
+            app:layout_constraintTop_toTopOf="@+id/v3_2"
+            app:srcCompat="@drawable/ic_people" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/v3_p_3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/v3_p_2"
+            app:layout_constraintStart_toEndOf="@+id/v3_p_2"
+            app:layout_constraintTop_toTopOf="@+id/v3_p_2"
+            app:srcCompat="@drawable/ic_people" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/v3_p_2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/v3_3"
+            app:layout_constraintStart_toEndOf="@+id/v3_3"
+            app:layout_constraintTop_toTopOf="@+id/v3_3"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_people" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/v3_p_4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/v3_p_3"
+            app:layout_constraintStart_toEndOf="@+id/v3_p_3"
+            app:layout_constraintTop_toTopOf="@+id/v3_p_3"
+            app:srcCompat="@drawable/ic_people" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/v3_p_5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/v3_p_4"
+            app:layout_constraintStart_toEndOf="@+id/v3_p_4"
+            app:layout_constraintTop_toTopOf="@+id/v3_p_4"
+            app:srcCompat="@drawable/ic_people" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v1_1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="4dp"
+            android:background="#80000000"
+            app:layout_constraintBottom_toBottomOf="@+id/v1_2"
+            app:layout_constraintEnd_toStartOf="@+id/v1_2"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v1_2"
+            app:layout_constraintVertical_bias="0.636" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v1_3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="16dp"
+            android:background="#80000000"
+            app:layout_constraintBottom_toBottomOf="@+id/v1_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/v1_2"
+            app:layout_constraintTop_toTopOf="@+id/v1_2" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/v5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v3_1"
+            app:srcCompat="@drawable/bg_vote_1" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/v6"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v5"
+            app:srcCompat="@drawable/bg_vote_2" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/v7"
+            android:layout_width="150dp"
+            android:layout_height="178dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v6"
+            app:srcCompat="@drawable/bg_vote_3" />
+
+        <EditText
+            android:id="@+id/etChat"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_et_chat"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:hint="채팅 보내기..."
+            android:paddingLeft="16dp"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivSend"
+            app:layout_constraintEnd_toStartOf="@+id/ivSend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivSend" />
+
+        <ImageView
+            android:id="@+id/ivSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_send"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:text="40초"
+            android:textColor="@color/half_black"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="7dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:max="60"
+            android:progress="1"
+            android:progressDrawable="@drawable/progressbar_horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/etChat"
+            app:layout_constraintEnd_toStartOf="@+id/textView8"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

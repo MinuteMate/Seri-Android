@@ -14,11 +14,25 @@
         android:theme="@style/Theme.SeriAndroid"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.game.activity.VoteActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.main.MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.signin.activity.SignInActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.auth.AuthMainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.splash.activity.SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,10 +41,8 @@
         </activity>
         <activity
             android:name=".ui.game.activity.GameActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.auth.AuthMainActivity"
-            android:exported="true" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

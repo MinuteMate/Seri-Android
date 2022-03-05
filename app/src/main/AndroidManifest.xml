@@ -28,6 +28,9 @@
         <activity
             android:name=".ui.game.activity.GameActivity"
             android:exported="true" />
+        <activity
+            android:name=".ui.auth.AuthMainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
